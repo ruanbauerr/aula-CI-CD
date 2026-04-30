@@ -15,9 +15,9 @@ jobs:
 
       - name: Verificar se existe pelo menos um html
         run: |
-        if find . -name "*.html" | grep -q .; then 
-          echo "Arquivos HTML encontrados com sucesso."
-        else 
-          echo "Nenhum arquivo HTML encontrado."
-          exit 1
-        fi
+          if find . -name "*.html" | grep -q .; then 
+            echo "Arquivos HTML encontrados com sucesso."
+          else 
+            echo "Nenhum arquivo HTML encontrado."
+            exit 1
+          fi
