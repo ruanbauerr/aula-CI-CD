@@ -13,11 +13,11 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Verificar se existe pelo menos umm html
+      - name: Verificar se existe pelo menos um html
         run: |
-        if find . -name "*.hmtl" | grep -q .; then 
+        if find . -name "*.html" | grep -q .; then 
           echo "Arquivos HTML encontrados com sucesso."
         else 
-          echo "Nenhum arquivo Html encontrado."
+          echo "Nenhum arquivo HTML encontrado."
           exit 1
         fi
