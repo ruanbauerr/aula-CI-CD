@@ -1,0 +1,23 @@
+name: Pipeline test
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  validar-push-dev:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verificar se existe pelo menos umm html
+        run: |
+        if find . -name "*.hmtl" | grep -q .; then 
+          echo "Arquivos HTML encontrados com sucesso."
+        else 
+          echo "Nenhum arquivo Html encontrado."
+          exit 1
+        fi
